@@ -62,7 +62,7 @@ var CirclePlayer = function(jPlayerSelector, media, options) {
 	this.spritePitch = 104;
 	this.spriteRatio = 0.24; // Number of steps / 100
 
-	this.player = $(jPlayerSelector);
+	this.player = (typeof jPlayerSelector === 'string') ? $(jPlayerSelector) : jPlayerSelector;
 	this.media = $.extend({}, media);
 	this.options = $.extend(true, {}, defaults, options); // Deep copy
 
